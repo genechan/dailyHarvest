@@ -1,5 +1,5 @@
 import React from "react";
-
+import { allergyWarning } from "../constants";
 const Product = ({
   name = "",
   collection = "",
@@ -8,7 +8,7 @@ const Product = ({
 }) => {
   return (
     <div>
-      {allergen && <span>* Allergy Warring</span>}
+      {allergen && <span>{allergyWarning}</span>}
       <p className="productName">{name}</p>
       <p className="collection">{collection}</p>
 

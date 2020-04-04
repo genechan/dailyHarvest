@@ -7,3 +7,4 @@ export const description =
   'Enter your ingredient and we will find a product that matches it. You can search for more then one ingredient by separating them with a comma ",".';
 // for components
 export const searchText = "Search for your ingredients";
+export const allergyWarning = "* Allergy Warring";
