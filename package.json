@@ -10,9 +10,11 @@
     "clean": "rm dist/bundle.js",
     "start": "parcel src/index.html",
     "build-prod": "parcel build src/index.html",
-    "test": "jest --collectCoverage"
+    "test": "jest --collectCoverage",
+    "integration": "concurrently \"yarn parcel src/index.html\" \"yarn run cypress open\""
   },
   "dependencies": {
+    "concurrently": "^5.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -26,6 +28,7 @@
     "@testing-library/react": "^10.0.2",
     "@types/jest": "^25.2.1",
     "babel-jest": "^25.2.6",
+    "cypress": "^4.3.0",
     "jest": "^25.2.7",
     "less": "^3.11.1",
     "parcel-bundler": "^1.12.4",

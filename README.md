@@ -34,10 +34,17 @@ on your browser
 
 ## Testing
 
-To run unit test
+To run jest unit test
 
 ```sh
 yarn test
+```
+
+To run cypress.io integration test.
+This will launch parcel localhost along with cypress. Cypress won't test a site unless it's running first.
+
+```sh
+yarn integration
 ```
 
 ## Credits
@@ -45,3 +52,5 @@ yarn test
 Made with [createapp.dev](https://createapp.dev/)
 
 Background Image from [visualeyes](https://www.visualeyes-international.com/)
+
+Integration Test from [cypress.io](https://www.cypress.io/)
