@@ -33,7 +33,7 @@ export const sanitizeProducts = (rawProducts, ingredients) => {
   return rawProducts.map((product) => {
     return {
       ...product,
-      ingredient_ids: createIngredients(product.ingredient_ids, ingredients),
+      ingredients: createIngredients(product.ingredient_ids, ingredients),
     };
   });
 };

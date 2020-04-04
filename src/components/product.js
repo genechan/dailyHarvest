@@ -1,22 +1,31 @@
 import React from "react";
 import { allergyWarning } from "../constants";
+
 const Product = ({
   name = "",
   collection = "",
-  ingredient = [],
+  ingredients = [],
   allergen = false,
 }) => {
+  //INFO: Using HTML codes &nbsp; some browser may or may not respect the whitespace between html tags
+  // HTML codes insures it does.
   return (
-    <div>
+    <div className="product">
       {allergen && <span>{allergyWarning}</span>}
-      <p className="productName">{name}</p>
-      <p className="collection">{collection}</p>
-      <ul className="ingredients">{createIngredientsList(ingredient)}</ul>
+      <p className="productName">
+        <span className="label">Name:&nbsp;</span> {name}
+      </p>
+      <p className="collection">
+        <span className="label">Collection:&nbsp;</span> {collection}
+      </p>
+      <p className="label">Ingredients:</p>
+      <ul className="ingredients">{createIngredientsList(ingredients)}</ul>
     </div>
   );
 };
-const createIngredientsList = (ingredient) => {
-  return ingredient.map((obj) => {
+
+export const createIngredientsList = (ingredients) => {
+  return ingredients.map((obj) => {
     return <li>{obj.name}</li>;
   });
 };
