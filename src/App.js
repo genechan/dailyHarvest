@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 //App imports
 import { List, SearchBar } from "./components";
-import { title, description } from "./constants";
+import { title, description, MAX_INPUT } from "./constants";
 import { USER_INPUT } from "./redux/actions";
 
 const App = () => {
@@ -24,7 +24,14 @@ const App = () => {
 //INFO: export for unit test
 export const onChangeUserInput = (dispatch) => {
   return (e) => {
-    dispatch({ type: USER_INPUT, payload: e.target.value });
+    if (e.target.value.trim().length > MAX_INPUT) {
+      dispatch({
+        type: USER_INPUT,
+        payload: "",
+      });
+    } else {
+      dispatch({ type: USER_INPUT, payload: e.target.value.trim() });
+    }
   };
 };
 export default App;

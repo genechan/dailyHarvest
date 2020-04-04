@@ -3,12 +3,19 @@ import Product from "./product";
 
 const List = ({ items = [] }) => {
   const list = createProductList(items);
-  return (
-    <div className="list">
-      <h3>Here are the products that contains your ingredients</h3>
-      <ul>{list}</ul>
-    </div>
-  );
+  if (items.length) {
+    return (
+      <div className="list">
+        <h3>
+          Here are the number ({items.length}) of products that contains your
+          ingredients
+        </h3>
+
+        <ul>{list}</ul>
+      </div>
+    );
+  }
+  return <></>;
 };
 
 export const createProductList = (items) => {
