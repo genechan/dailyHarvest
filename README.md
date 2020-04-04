@@ -26,6 +26,14 @@ yarn run build-prod
 
 Open the file `dist/index.html` in your browser
 
+## Testing
+
+To run unit test
+
+```sh
+yarn test
+```
+
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)

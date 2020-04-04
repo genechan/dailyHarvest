@@ -1,0 +1,5 @@
+//INFO: new bug in jest version 25.2.7, using this solution for reading `imports`
+//https://github.com/facebook/jest/issues/9395#issuecomment-583799300
+{
+  "presets": ["@babel/preset-env"]
+}
