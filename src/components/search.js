@@ -5,7 +5,14 @@ const SearchBar = ({ value, onChange }) => {
   return (
     <div>
       <label htmlFor="search">{searchText}</label>
-      <input id="search" type="text" value={value} onChange={onChange} />
+      <input
+        id="search"
+        type="text"
+        value={value}
+        onChange={onChange}
+        placeholder="Enter here"
+        autoComplete="false"
+      />
     </div>
   );
 };

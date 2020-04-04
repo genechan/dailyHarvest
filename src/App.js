@@ -15,13 +15,13 @@ const App = () => {
     //using semantic HTML5 tags article
     <article>
       <h1>{title}</h1>
-      <h4>{description}</h4>
+      <p>{description}</p>
       <SearchBar value={userInput} onChange={onChangeUserInput(dispatch)} />
       <List items={list} />
     </article>
   );
 };
-//INFO :export for unit test
+//INFO: export for unit test
 export const onChangeUserInput = (dispatch) => {
   return (e) => {
     dispatch({ type: USER_INPUT, payload: e.target.value });

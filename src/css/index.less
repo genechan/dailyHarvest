@@ -10,7 +10,107 @@
 
 @primary-color: black;
 @bg: white;
+@header: "Shadows Into Light", cursive;
+@description: "Roboto", sans-serif;
+@marginWrapper: 1em;
+
 body {
   color: @primary-color;
   background-color: @bg;
+  margin: @marginWrapper;
+}
+#app,
+#app > article {
+  margin: 0;
+  padding: 0;
+}
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+  margin: 0;
+  opacity: 0.5;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  font-weight: bolder;
+  font-family: @header;
+  margin: @marginWrapper;
+}
+.description {
+  font-family: @description;
+  text-shadow: 2px 2px 0 #bcbcbc;
+}
+h1 {
+  .title();
+  font-size: 3em;
+  + p {
+    .description();
+    margin: 3em;
+  }
+}
+h2,
+h3,
+h4,
+h5,
+label,
+.label {
+  .title();
+  font-size: 1.5em;
+}
+
+div,
+p,
+section,
+article,
+span {
+  .description();
+  margin: @marginWrapper;
+}
+.clearListFormat {
+  padding: 0;
+  > li {
+    list-style-type: none;
+  }
+}
+// components
+
+//List
+.list {
+  > ul {
+    .clearListFormat();
+  }
+}
+
+// Product
+.product {
+  label,
+  span.label {
+    margin-left: 0;
+  }
+  ul.ingredients {
+    margin-left: 1em;
+  }
+  p.label {
+    margin-bottom: 0.5em;
+  }
+}
+
+//Search Bar
+#search {
+  background: transparent;
+  border: 2px solid black;
+  padding: 1em;
+  border-radius: 5px;
+  outline: none;
+  &::placeholder {
+    color: @primary-color;
+  }
 }
