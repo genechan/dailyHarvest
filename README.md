@@ -1,6 +1,6 @@
-# dailyHarvest
+# Daily Harvest Test
 
-Daily Harvest.
+Daily Harvest product finder project
 
 ## Building and running on localhost
 
