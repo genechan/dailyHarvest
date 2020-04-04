@@ -8,13 +8,17 @@ export const searchProductList = (ingredientPattern, ingredients, products) => {
 //INFO: These utils function that support the main `searchProductList` are exported for
 // unit test. Breaking big problems to small ones. Also easier to reuse else where.
 export const findIngredients = (pattern = "", ingredients = []) => {
-  const searchList = pattern
-    .split(",")
-    .map((string) => string.trim().toLowerCase())
-    .filter((string) => string && string.length);
+  const searchList = sanitizeSearch(pattern);
   return ingredients.filter(({ name }) => {
     return testName(name, searchList);
   });
+};
+
+export const sanitizeSearch = (pattern) => {
+  return pattern
+    .split(",")
+    .map((string) => string.trim().toLowerCase())
+    .filter((string) => string && string.length);
 };
 
 export const testName = (name, list) => {
