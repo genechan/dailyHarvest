@@ -24,7 +24,13 @@ yarn run build-prod
 
 ## Running
 
-Open the file `dist/index.html` in your browser
+```sh
+yarn start
+```
+
+goto
+http://localhost:1234
+on your browser
 
 ## Testing
 
