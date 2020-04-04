@@ -1,11 +1,11 @@
 import React from "react";
 import { searchText } from "../constants";
 
-const SearchBar = () => {
+const SearchBar = ({ value, onChange }) => {
   return (
     <div>
       <label htmlfor="search">{searchText}</label>
-      <input id="search" type="text" />
+      <input id="search" type="text" value={value} onChange={onChange} />
     </div>
   );
 };
